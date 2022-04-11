@@ -2,23 +2,16 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 body{
-<<<<<<< HEAD
-=======
-    display: flex;
+    /* display: flex;
     align-items:center;
-    justify-content: center;
->>>>>>> dev
+    justify-content: center; */
     min-height:  100vh;
     background-color: aqua;
     padding: 0 10px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 .wrapper{
     height: 265px;
     background: #fff;
