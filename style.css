@@ -5,13 +5,11 @@
     box-sizing: border-box;
 }
 body{
-    display: flex;
-    align-items:center;
-    justify-content: center;
     min-height:  100vh;
     background-color: aqua;
     padding: 0 10px;
 }
+
 .wrapper{
     height: 265px;
     background: #fff;
