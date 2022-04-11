@@ -5,11 +5,20 @@
     box-sizing: border-box;
 }
 body{
+<<<<<<< HEAD
+=======
+    display: flex;
+    align-items:center;
+    justify-content: center;
+>>>>>>> dev
     min-height:  100vh;
     background-color: aqua;
     padding: 0 10px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev
 .wrapper{
     height: 265px;
     background: #fff;
