@@ -6,9 +6,6 @@ const gray = document.getElementById("gray")
 const violet = document.getElementById("violet")
 const blue = document.getElementById("blue")
 
-const cardContainer = document.querySelector(".cardContainer")
-const cardDisplay = document.querySelector(".cardDisplay")
-
 const catButtn = document.getElementById("catButtn")
 catImg = document.getElementById("imgCard")
 catButtn.addEventListener("click", (event) => {
@@ -23,12 +20,24 @@ catButtn.addEventListener("click", (event) => {
 
 })
 
+const kayneBtn = document.getElementById("KayneBtn")
+quoteInput = document.getElementById("quote")
+
+KayneBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    fetch("https://api.kanye.rest")
+        .then(response => response.json())
+        .then(data => (quoteInput.innerHTML = data.quote));
+})
+
+
 const wrapper = document.querySelector(".wrapper");
 qrInput = wrapper.querySelector(".form input");
 generateBtn = wrapper.querySelector(".form button");
 qrImg = wrapper.querySelector(".qr-code img");
 
 generateBtn.addEventListener("click", () => {
+    event.preventDefault();
     // when inserting url or text in the input box
     let qrValue = qrInput.value.trim();
     if (!qrValue) return; 
