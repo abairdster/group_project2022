@@ -1,11 +1,3 @@
-const yellow = document.getElementById("yellow")
-const green = document.getElementById("green")
-const pink = document.getElementById("pink")
-const salmon = document.getElementById("salmon")
-const gray = document.getElementById("gray")
-const violet = document.getElementById("violet")
-const blue = document.getElementById("blue")
-
 const catButtn = document.getElementById("catButtn")
 catImg = document.getElementById("imgCard")
 catButtn.addEventListener("click", (event) => {
@@ -46,3 +38,32 @@ generateBtn.addEventListener("click", () => {
     wrapper.classList.add("active");
 })
 
+const title = document.getElementById ("title")
+const recipient = document.getElementById ("recipient")
+const sender = document.getElementById ("sender")
+const titleDisplay = document.getElementById ("title-display")
+const senderDisplay = document.getElementById ("sender-display")
+const recipientDisplay = document.getElementById ("recipient-display")
+const message = document.getElementById("message")
+const messageDisplay = document.getElementById ("message-display")
+const form = document.querySelector('form')
+titleDisplay.addEventListener("keyup", function() {
+    titleDisplay.textContent = title.value
+})
+recipientDisplay.addEventListener("keyup", function(){
+    recipientDisplay.textContent = recipient.value;
+})
+senderDisplay.addEventListener("keyup",function(e){
+    senderDisplay.textContent = sender.value
+})
+messageDisplay.addEventListener("keyup", function(){
+    messageDisplay.textContent = message.value
+})
+
+form.addEventListener("submit",event => {
+    event.preventDefault()
+    titleDisplay.textContent = title.value
+    recipientDisplay.textContent = recipient.value;
+    messageDisplay.textContent = message.value
+    senderDisplay.textContent = sender.value
+})
