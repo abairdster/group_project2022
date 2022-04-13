@@ -44,21 +44,21 @@
                 <p class="">Create the perfect randomly generated greeting card for any occasion with the motivational words of aclaimed musical artist and genius,Kanye West. Juxtaposed with a randomly generated Cat Boy picture, these greeting cards are sure to inspire and confuse your loved ones and enemies alike! Click below to get started</p>
             </header>
         </div>
-        <div class="card-input ">
+        <div class="card-input">
             <form>
-                 <div class="form ">
+                 <div class="form">
                      <div class="sec1">
-                         <div class=""> 
-                             <label for="title">Title:</label>
-                             <input type="text" id="title" name="title" placeholder="e.g: Happy Birthday">
-                         </div>
-                         <div class="">
-                             <label for="recipient">To:</label>
-                             <input type="text" id="recipient" name="recipient" placeholder="Recipient name">        
-                         </div>
-                         <div class="">
-                             <label for="sender">From:</label>
-                             <input type="text" id="sender" name="sender" placeholder="Sender name">
+                         <div> 
+                            <label for="title">Title:</label>
+                                    <input type="text" id="title" name="title" placeholder="e.g: Happy Family Day">
+                                </div>
+                                <div>
+                                    <label for="rname">To:</label>
+                                    <input type="text" id="rname" name="rname" placeholder="Recipient name">        
+                                </div>
+                                <div>
+                                    <label for="sname">From:</label>
+                                    <input type="text" id="sname" name="sname" placeholder="Sender name">
                          </div>
                      </div> 
                        <div class="userinput ">
@@ -66,7 +66,7 @@
                              <p >Picture selection</p>
                              <button id="catButtn">Generate a new image</button>
                          </div>
-                         <div class="">
+                         <div>
                              <label for="message">Message:</label>
                              <textarea id="message" name="message" rows="3" cols="15" maxlength="80" placeholder="Your message..."></textarea>
                          </div>
@@ -79,21 +79,22 @@
             </form>     
          </div> 
 <br>
-         <div class="card-content ">
-             <div class="cardDisplay ">
-                 <div id="title-display msg">Happy Family Day</div>
-                 <div>
-                     <p id="greeting msg">Dear <span id="recipient-display">Ambreen</span></p>
-                     <p id="message-display msg">Getting to celebrate this unique day with you is nothing but a pure blessing from the Lord. </p>
-                 </div>
-                 <div>
-                     <p id="sender-greeting msg">Best Wishes,</p>
-                     <p id="sender-display msg">Mariam</p>
-                 </div>
-             </div>
-             <div class="card-image">
-                 <img id="imgCard" src="">
-             </div>
+<div class="card-view">
+    <div class="card-content">
+        <div class="title-display msg">Happy Family Day</div>
+        <div>
+            <p class="greeting msg">Dear <span class="r-name-display">Ambreen</span></p>
+            <p class="message-display msg">Getting to celebrate this unique day with you is nothing but a pure blessing from the Lord. </p>
+        </div>
+        <div>
+            <p class="sender-greeting msg">Best Wishes,</p>
+            <p class="s-name-display msg">Mariam</p>
+        </div>
+    </div>
+    <div class="card-image-container">
+        <img id="imgCard" src="">
+    </div>
+</div>
              <div class="quote">
                     <i class="fas fa-quote-left"></i>
                     <span class="quote" id="quote"> </span>
