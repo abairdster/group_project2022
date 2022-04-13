@@ -15,7 +15,7 @@ catButtn.addEventListener("click", (event) => {
 const kayneBtn = document.getElementById("KayneBtn")
 quoteInput = document.getElementById("quote")
 
-KayneBtn.addEventListener("click", (event) => {
+kayneBtn.addEventListener("click", (event) => {
     event.preventDefault();
     fetch("https://api.kanye.rest")
         .then(response => response.json())
@@ -38,32 +38,43 @@ generateBtn.addEventListener("click", () => {
     wrapper.classList.add("active");
 })
 
-const title = document.getElementById ("title")
-const recipient = document.getElementById ("recipient")
-const sender = document.getElementById ("sender")
-const titleDisplay = document.getElementById ("title-display")
-const senderDisplay = document.getElementById ("sender-display")
-const recipientDisplay = document.getElementById ("recipient-display")
-const message = document.getElementById("message")
-const messageDisplay = document.getElementById ("message-display")
+const title = document.getElementById('title');
+const titleDisplay = document.querySelector(".title-display");
+
+const recipientNameInput = document.getElementById("rname");
+const senderNameInput = document.getElementById("sname");
+
+const recipientNameDisplay = document.querySelector('.r-name-display');
+const senderNameDisplay = document.querySelector('.s-name-display');
+
+const message = document.getElementById('message');
+const senderMessageDisplay = document.querySelector('.message-display');
+
+
+
+title.addEventListener("keyup", function() {
+    titleDisplay.textContent = title.value;
+})
+
+recipientNameInput.addEventListener("keyup", function() {
+    recipientNameDisplay.textContent = recipientNameInput.value;
+})
+
+senderNameInput.addEventListener("keyup", function() {
+    senderNameDisplay.textContent = senderNameInput.value;
+})
+
+message.addEventListener("keyup", function() {
+    senderMessageDisplay.textContent = message.value;
+})
+
 const form = document.querySelector('form')
-titleDisplay.addEventListener("keyup", function() {
-    titleDisplay.textContent = title.value
-})
-recipientDisplay.addEventListener("keyup", function(){
-    recipientDisplay.textContent = recipient.value;
-})
-senderDisplay.addEventListener("keyup",function(e){
-    senderDisplay.textContent = sender.value
-})
-messageDisplay.addEventListener("keyup", function(){
-    messageDisplay.textContent = message.value
-})
 
 form.addEventListener("submit",event => {
     event.preventDefault()
-    titleDisplay.textContent = title.value
-    recipientDisplay.textContent = recipient.value;
-    messageDisplay.textContent = message.value
-    senderDisplay.textContent = sender.value
+    recipientNameDisplay.textContent = recipientNameInput.value;
+    senderNameDisplay.textContent = senderNameInput.value;
+    titleDisplay.textContent = title.value;
+    senderMessageDisplay.textContent = message.value;
+    displayImage.src = selectImage.value;
 })
