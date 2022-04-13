@@ -1,14 +1,3 @@
-const yellow = document.getElementById("yellow")
-const green = document.getElementById("green")
-const pink = document.getElementById("pink")
-const salmon = document.getElementById("salmon")
-const gray = document.getElementById("gray")
-const violet = document.getElementById("violet")
-const blue = document.getElementById("blue")
-
-const cardContainer = document.querySelector(".cardContainer")
-const cardDisplay = document.querySelector(".cardDisplay")
-
 const catButtn = document.getElementById("catButtn")
 catImg = document.getElementById("imgCard")
 catButtn.addEventListener("click", (event) => {
@@ -19,20 +8,19 @@ catButtn.addEventListener("click", (event) => {
     }) .then(function(data) {
         console.log(data)
         catImg.src = data.url;
-
     })
 
 })
 
-recipient.addEventListener("keyup", function() {
-    recipient.textContent = recipient-name-display.value
-}
+const kayneBtn = document.getElementById("KayneBtn")
+quoteInput = document.getElementById("quote")
 
-const form = document.querySelector("#saveBtn")
-form.addEventListener('submit', event => {
-    event.preventDefault()
-    recipient.textContent = recipient.value
-}
+KayneBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    fetch("https://api.kanye.rest")
+        .then(response => response.json())
+        .then(data => (quoteInput.innerHTML = data.quote));
+})
 
 
 const wrapper = document.querySelector(".wrapper");
@@ -41,6 +29,7 @@ generateBtn = wrapper.querySelector(".form button");
 qrImg = wrapper.querySelector(".qr-code img");
 
 generateBtn.addEventListener("click", () => {
+    event.preventDefault();
     // when inserting url or text in the input box
     let qrValue = qrInput.value.trim();
     if (!qrValue) return; 
@@ -49,3 +38,32 @@ generateBtn.addEventListener("click", () => {
     wrapper.classList.add("active");
 })
 
+const title = document.getElementById ("title")
+const recipient = document.getElementById ("recipient")
+const sender = document.getElementById ("sender")
+const titleDisplay = document.getElementById ("title-display")
+const senderDisplay = document.getElementById ("sender-display")
+const recipientDisplay = document.getElementById ("recipient-display")
+const message = document.getElementById("message")
+const messageDisplay = document.getElementById ("message-display")
+const form = document.querySelector('form')
+titleDisplay.addEventListener("keyup", function() {
+    titleDisplay.textContent = title.value
+})
+recipientDisplay.addEventListener("keyup", function(){
+    recipientDisplay.textContent = recipient.value;
+})
+senderDisplay.addEventListener("keyup",function(e){
+    senderDisplay.textContent = sender.value
+})
+messageDisplay.addEventListener("keyup", function(){
+    messageDisplay.textContent = message.value
+})
+
+form.addEventListener("submit",event => {
+    event.preventDefault()
+    titleDisplay.textContent = title.value
+    recipientDisplay.textContent = recipient.value;
+    messageDisplay.textContent = message.value
+    senderDisplay.textContent = sender.value
+})

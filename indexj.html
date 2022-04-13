@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link
     rel="stylesheet"
@@ -30,79 +29,81 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"
 ></script>
+<link rel="stylesheet" href="./style.css">
+
     <title>greeting card</title>
 </head>
 
-<body class="container-fluid">`
-    <div class = " ">
-        <header class="starting_pg ">
-            <h1 class="container" >Kayne Catboy Greeting Card generator</h1>
-            <img  src="./Screenshot 2022-04-11 095810.png" alt="Catboy Kayne" class="">
-            <p class="">Create the perfect randomly generated greeting card for any occasion with the motivational words of aclaimed musical artist and genius,Kanye West. Juxtaposed with a randomly generated Cat Boy picture, these greeting cards are sure to inspire and confuse your loved ones and enemies alike! Click below to get started</p>
-        </header>
-        <div class="card-input container">
+<body class="">`
+    <div class = "">
+        <div class = "header ">
+            <header class="starting_pg ">
+                <h1 class= >Kayne Catboy Greeting Card generator</h1>
+                <img  src="./Screenshot 2022-04-11 095810.png" alt="Catboy Kayne" class="
+                ">
+                <p class="">Create the perfect randomly generated greeting card for any occasion with the motivational words of aclaimed musical artist and genius,Kanye West. Juxtaposed with a randomly generated Cat Boy picture, these greeting cards are sure to inspire and confuse your loved ones and enemies alike! Click below to get started</p>
+            </header>
+        </div>
+        <div class="card-input ">
             <form>
-                 <div class="form row">
+                 <div class="form ">
                      <div class="sec1">
-                         <div> 
+                         <div class=""> 
                              <label for="title">Title:</label>
                              <input type="text" id="title" name="title" placeholder="e.g: Happy Birthday">
                          </div>
-                         <div>
+                         <div class="">
                              <label for="recipient">To:</label>
                              <input type="text" id="recipient" name="recipient" placeholder="Recipient name">        
                          </div>
-                         <div>
+                         <div class="">
                              <label for="sender">From:</label>
                              <input type="text" id="sender" name="sender" placeholder="Sender name">
                          </div>
                      </div> 
-                       <div class="userinput container">
-                                <div class="color-picker row">
-                                    <label>Choose color:</label>
-                                        <div class="colors" id="pink" ></div>
-                                        <div class="colors" id="yellow" ></div>			
-                                        <div class="colors" id="green" ></div>
-                                        <div class="colors" id="blue" ></div>
-                                        <div class="colors" id="indigo" ></div>
-                                        <div class="colors" id="violet" ></div>
-                                        <div class="colors" id="gray" ></div>
-                                </div>
-                         <div class="picture row">
-                             <button id="saveBtn">Save</button>
+                       <div class="userinput ">
+                         <div class="picture ">
                              <p >Picture selection</p>
                              <button id="catButtn">Generate a new image</button>
                          </div>
-                         <div class="row">
+                         <div class="">
                              <label for="message">Message:</label>
                              <textarea id="message" name="message" rows="3" cols="15" maxlength="80" placeholder="Your message..."></textarea>
                          </div>
-                         <div class="row">
-                             <p>Want an inspirational quote?</p>
-                             <button>Kayne Button</button>
+                         <div class="buttons">
+                             <button id="KayneBtn">Kanye button</button>
                          </div>
+                     </div>
                      </div> 
                  </div>  
+            </form>     
          </div> 
-         <div class="cardContainer">
-             <div class="cardDisplay">
-                 <div class="title-display msg">Happy Family Day</div>
+<br>
+         <div class="card-content ">
+             <div class="cardDisplay ">
+                 <div id="title-display msg">Happy Family Day</div>
                  <div>
-                     <p class="greeting msg">Dear <span class="recipient-name-display">Ambreen</span></p>
-                     <p class="message-display msg">Getting to celebrate this unique day with you is nothing but a pure blessing from the Lord. </p>
+                     <p id="greeting msg">Dear <span id="recipient-display">Ambreen</span></p>
+                     <p id="message-display msg">Getting to celebrate this unique day with you is nothing but a pure blessing from the Lord. </p>
                  </div>
                  <div>
-                     <p class="sender-greeting msg">Best Wishes,</p>
-                     <p class="sender-display msg">Mariam</p>
+                     <p id="sender-greeting msg">Best Wishes,</p>
+                     <p id="sender-display msg">Mariam</p>
                  </div>
              </div>
              <div class="card-image">
                  <img id="imgCard" src="">
              </div>
+             <div class="quote">
+                    <i class="fas fa-quote-left"></i>
+                    <span class="quote" id="quote"> </span>
+                    <i class="fas fa-quote-right"></i>
+                    <h2> -  Kanye Omari YE</h2>
+             </div>
          </div>
     </div>
 <br>
-    <div class="wrapper col-lg-7">
+    <div class="wrapper container">
         <header>
             <h1>QR code generator</h1>
             <p>Paste a url or enter a text to create QR code.</p>
