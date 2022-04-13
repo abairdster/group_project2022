@@ -9,16 +9,31 @@ const blue = document.getElementById("blue")
 const cardContainer = document.querySelector(".cardContainer")
 const cardDisplay = document.querySelector(".cardDisplay")
 
-const catButtn = document.getElementById("#catButtn")
-userInput = document.querySelector(".userinput")
-catInput = userInput.querySelector(".picture button");
-catImg = document.getElementById("#imgCard")
-catButtn.addEventListener("click", () => {
-    let catValue = catInput.value.trim()
-    catImg.src = `https://api.catboys.com/img
-    ${catValue}`;
+const catButtn = document.getElementById("catButtn")
+catImg = document.getElementById("imgCard")
+catButtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    fetch("https://api.catboys.com/img").then(function(response) {
+        return response.json()
+        
+    }) .then(function(data) {
+        console.log(data)
+        catImg.src = data.url;
+
+    })
 
 })
+
+recipient.addEventListener("keyup", function() {
+    recipient.textContent = recipient-name-display.value
+}
+
+const form = document.querySelector("#saveBtn")
+form.addEventListener('submit', event => {
+    event.preventDefault()
+    recipient.textContent = recipient.value
+}
+
 
 const wrapper = document.querySelector(".wrapper");
 qrInput = wrapper.querySelector(".form input");
