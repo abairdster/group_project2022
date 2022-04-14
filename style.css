@@ -30,7 +30,6 @@ body{
    border-radius: 3px;
 }
 button[type="submit"] {
-   background-color: #349bab;
    width: calc((100% / 2) - 3px);
    display: inline-block;
    color: white;
@@ -103,7 +102,7 @@ header p {
     pointer-events: auto;
     transition: opacity 0.2s 0.5s ease;
 }
-.card-view {
+.cardView {
    margin: auto;
     width: 70%;
     max-width: 1000px;
