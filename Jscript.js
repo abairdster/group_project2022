@@ -23,20 +23,7 @@ kayneBtn.addEventListener("click", (event) => {
 })
 
 
-const wrapper = document.querySelector(".wrapper");
-qrInput = wrapper.querySelector(".form input");
-generateBtn = wrapper.querySelector(".form button");
-qrImg = wrapper.querySelector(".qr-code img");
 
-generateBtn.addEventListener("click", () => {
-    event.preventDefault();
-    // when inserting url or text in the input box
-    let qrValue = qrInput.value.trim();
-    if (!qrValue) return; 
-    console.log(qrValue);
-    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
-    wrapper.classList.add("active");
-})
 
 const title = document.getElementById('title');
 const titleDisplay = document.querySelector(".title-display");
@@ -69,6 +56,14 @@ message.addEventListener("keyup", function() {
 })
 
 const form = document.querySelector('form')
+const formID = document.querySelector("#save-later-form")
+const url = location.href
+const formIdentifier =`${url}${formID}`;
+const saveButton = document.querySelector("#save"); 
+const alertBox = document.querySelector(".alert"); 
+const note = "Form draft has been saved!";
+
+let formElements = form.elements
 
 form.addEventListener("submit",event => {
     event.preventDefault()
@@ -76,5 +71,36 @@ form.addEventListener("submit",event => {
     senderNameDisplay.textContent = senderNameInput.value;
     titleDisplay.textContent = title.value;
     senderMessageDisplay.textContent = message.value;
-    displayImage.src = selectImage.value;
+    // displayImage.src = selectImage.value;
 })
+
+const getFormData = () => {
+    let data = { [formIdentifier]: {} }; // create an empty object with the formIdentifier as the key and an empty object as its value
+    for (const element of formElements) {
+      if (element.name.length > 0) {
+        data[formIdentifier][element.name] = element.value;
+      }
+    }
+    return data;
+  };
+  
+  saveButton.onclick = event => {
+    event.preventDefault();
+    data = getFormData();
+    localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
+    alert("Your card has been saved")
+  };
+
+  const wrapper = document.querySelector(".wrapper");
+  qrInput = wrapper.querySelector(".form input");
+  generateBtn = wrapper.querySelector(".form button");
+  qrImg = wrapper.querySelector(".qr-code img");
+  
+  generateBtn.addEventListener("click", () => {
+      // when inserting url or text in the input box
+      let qrValue = qrInput.value.trim();
+      if (!qrValue) return; 
+      console.log(qrValue);
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${qrValue}`;
+      wrapper.classList.add("active");
+  })

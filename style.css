@@ -2,13 +2,48 @@
     margin: 0;
     padding: 0;
 }
+.header {
+   position: relative;
+   text-align: center;
+   color: salmon;
+}
+header p{
+   display: flex;
+   font-size:x-large;
+   color:rgb(17, 90, 248);
+   font-weight:bold;
+}
 body{
     min-height:  100vh;
-    background-color: aqua;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxMaZftlCeYEKxGLkvudSqu7N72HcRZa4kp6yb1R3aCt4w8RxlO16WZgy7Iig8anYFPp4&usqp=CAU");
     margin: 0;
 }
+.starting_pg img{
+   justify-content: center;
+}
+#save-later-form {
+   position: relative;
+   width: 80vw;
+   margin: 3rem auto;
+   background-color: whitesmoke;
+   padding: 1rem 2rem;
+   border-radius: 3px;
+}
+button[type="submit"] {
+   background-color: #349bab;
+   width: calc((100% / 2) - 3px);
+   display: inline-block;
+   color: white;
+   font-weight: 600;
+   height: 2.8rem;
+   border: none;
+   font-family: Nunito;
+   font-size: 1rem;
+   cursor: pointer;
+   outline: none;
+ }
 .wrapper{
-    height: 265px;
+    height: 565px;
     background: #fff;
     max-width: 410px;
     border-radius: 7px;
@@ -16,7 +51,7 @@ body{
     transition: height 0.2s ease;
 }
 .wrapper.active {
-    height: 600px;
+    height: 800px;
 }
 header h1{
     font: size 25px;
@@ -40,7 +75,7 @@ header p {
 .form input{
     font-size: 15px;
     border: 1px solid #888;
-    padding: 0 17px;
+    /* padding: 0px; */
 }
 .form button {
     margin-top: 25px;
@@ -83,7 +118,7 @@ header p {
     background-color: lightblue;
  }
  img {
-    height: 980px;
+    height: 400px;
     width: 100%;
     margin: 0;
     object-fit: cover;

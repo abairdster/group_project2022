@@ -38,8 +38,8 @@
                 <p class="">Create the perfect randomly generated greeting card for any occasion with the motivational words of aclaimed musical artist and genius,Kanye West. Juxtaposed with a randomly generated Cat Boy picture, these greeting cards are sure to inspire and confuse your loved ones and enemies alike! Click below to get started</p>
             </header>
         </div>
-        <div class="card-input">
-            <form>
+        <div class="alrt">
+            <form id="save-later-form">
                  <div class="form">
                      <div class="sec1">
                          <div> 
@@ -56,10 +56,6 @@
                          </div>
                      </div> 
                        <div class="userinput ">
-                         <div class="picture ">
-                             <p >Picture selection</p>
-                             <button id="catButtn">Generate a new image</button>
-                         </div>
                          <div>
                              <label for="message">Message:</label>
                              <textarea id="message" name="message" rows="3" cols="15" maxlength="80" placeholder="Your message..."></textarea>
@@ -67,6 +63,11 @@
                          <div class="buttons">
                              <button id="KayneBtn">Kanye button</button>
                          </div>
+                         <div class="picture ">
+                            <button id="catButtn">Generate a new image</button>
+                            <button type="submit" id="submit">SUBMIT</button>
+                            <button type="submit" id="save">SAVE</button>
+                        </div>
                      </div>
                      </div> 
                  </div>  
@@ -98,19 +99,20 @@
          </div>
     </div>
 <br>
-    <div class="wrapper container">
-        <header>
-            <h1>QR code generator</h1>
-            <p>Paste a url or enter a text to create QR code.</p>
-            </header>
-        <div class="form">
-            <input type="text" placeholder="Enter a text or a url">
-            <button>Generate QR Code</button>
-        </div>
-        <div class="qr-code">
-            <img src="" alt="qr-code">
-        </div>
+
+<div class="wrapper">
+    <header>
+        <h1>QR code generator</h1>
+        <p>Paste a url or enter a text to create QR code.</p>
+        </header>
+    <div class="form">
+        <input type="text" placeholder="Enter a text or a url">
+        <button>Generate QR Code</button>
     </div>
+    <div class="qr-code">
+        <img src="" alt="qr-code">
+    </div>
+
     <script src="./Jscript.js"></script>
 </body>
 </html>
