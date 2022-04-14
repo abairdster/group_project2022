@@ -43,6 +43,8 @@ button[type="submit"] {
    outline: none;
  }
 .wrapper{
+    margin: auto;
+    width: 50%;
     height: 565px;
     background: #fff;
     max-width: 410px;
@@ -56,14 +58,16 @@ button[type="submit"] {
 header h1{
     font: size 25px;
     font: weight 500;
+    text-align: center;
 }
 header p {
     margin-top: 5px;
     color: #474747;
     font: size 15px;
+    text-align: center;
 }
 .wrapper .form{
-    margin: 20px 0 30px;
+    margin: 20px 10px 1px 1px;
 }
 .form :where(input, button){
     width: 100%;
@@ -75,7 +79,8 @@ header p {
 .form input{
     font-size: 15px;
     border: 1px solid #888;
-    /* padding: 0px; */
+    padding: 0px;
+    align-items: cente;
 }
 .form button {
     margin-top: 25px;
@@ -99,6 +104,8 @@ header p {
     transition: opacity 0.2s 0.5s ease;
 }
 .card-view {
+   margin: auto;
+    width: 70%;
     max-width: 1000px;
     display: flex;
     flex-direction: row;
@@ -168,8 +175,10 @@ header p {
     margin-top: 0px;
  }
  label {
-    font-size: 1rem ;
+    font-size: 2rem ;
     margin: 0.8em 1em;
+    font-family: 'Ballet', cursive;
+    font-weight: bold;
   }
  input, textarea, select {
  font-family: 'Montserrat', sans-serif;
@@ -184,7 +193,7 @@ header p {
  }
  textarea {
     resize: none;
-    width: 95%;
+    width: 70%;
  }
  select {
     width: 100%;
