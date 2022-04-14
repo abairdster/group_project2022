@@ -60,6 +60,7 @@ const formID = document.querySelector("#save-later-form")
 const url = location.href
 const formIdentifier =`${url}${formID}`;
 const saveButton = document.querySelector("#save"); 
+const s4lBtn = document.querySelector("#s4l");
 const alertBox = document.querySelector(".alert"); 
 const note = "Form draft has been saved!";
 
@@ -75,7 +76,7 @@ form.addEventListener("submit",event => {
 })
 
 const getFormData = () => {
-    let data = { [formIdentifier]: {} }; // create an empty object with the formIdentifier as the key and an empty object as its value
+    let data = { [formIdentifier]: {} }; 
     for (const element of formElements) {
       if (element.name.length > 0) {
         data[formIdentifier][element.name] = element.value;
@@ -83,13 +84,31 @@ const getFormData = () => {
     }
     return data;
   };
-  
-  saveButton.onclick = event => {
+//   saving input to local storage
+  s4lBtn.onclick = event => {
     event.preventDefault();
     data = getFormData();
     localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
     alert("Your card has been saved")
   };
+// downloading the card into a png/img file not really my quote. credit ---->>> https://html2canvas.hertzen.com/documentation
+  function downloadURI(uri, name) {
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    link.click();
+  }
+var cardView = document.querySelector(".cardView");
+  saveButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    html2canvas(cardView, {
+      onrendered: function(canvas) {
+        var myImage = canvas.toDataURL("image/jpg");
+        downloadURI("data:" + myImage, "HappyHolidays.jpg");
+      }
+    });
+  });
+  
 
   const wrapper = document.querySelector(".wrapper");
   qrInput = wrapper.querySelector(".form input");
