@@ -91,6 +91,17 @@ const getFormData = () => {
     localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
     alert("Your card has been saved")
   };
+  const populateForm = () => {
+    if (localStorage.key(formIdentifier)) {
+      const savedData = JSON.parse(localStorage.getItem(formIdentifier)); // get and parse the saved data from localStorage
+      for (const element of formElements) {
+        if (element.name in savedData) {
+          element.value = savedData[element.name];
+        }
+      };
+    }
+  };
+  document.onload = populateForm();
 // downloading the card into a png/img file not really my quote. credit ---->>> https://html2canvas.hertzen.com/documentation
   function downloadURI(uri, name) {
     var link = document.createElement("a");
@@ -100,6 +111,7 @@ const getFormData = () => {
   }
 var cardView = document.querySelector(".cardView");
   saveButton.addEventListener('click', function(event) {
+      console.log(event)
     event.preventDefault();
     html2canvas(cardView, {
       onrendered: function(canvas) {

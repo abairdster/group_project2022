@@ -30,7 +30,6 @@ body{
    border-radius: 3px;
 }
 button[type="submit"] {
-   background-color: #349bab;
    width: calc((100% / 2) - 3px);
    display: inline-block;
    color: white;
